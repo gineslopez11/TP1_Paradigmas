@@ -6,6 +6,6 @@ class HachaSimple : public ArmaCombate {
 
 	public:
 		HachaSimple(int d, bool puedeB, int nivelR, string rar,bool lan);
-		bool puedeLanzar();
+		bool tieneHabilidadEspecial() const override;
 
 };

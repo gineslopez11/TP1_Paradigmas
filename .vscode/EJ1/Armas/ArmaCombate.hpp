@@ -9,9 +9,10 @@ class ArmaCombate : public IArma{
 		string rareza;
 
 	public:
-		void usar();
+		virtual bool tieneHabilidadEspecial() const = 0;
+		void usar() const override;
+		string getNombre() const override;
 		bool bloqueadora();
-		string getNombre();
 		int getNivelRequerido();
 		string getRareza();
 		int getDaño();

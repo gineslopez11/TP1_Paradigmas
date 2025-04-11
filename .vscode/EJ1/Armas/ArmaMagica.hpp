@@ -9,6 +9,7 @@ class ArmaMagica : public IArma{
 		string rangoEfecto;
 
 	public:
+		virtual bool tieneHabilidadEspecial() const = 0;
 		void usar();
 		string getNombre();
 		bool proteje();

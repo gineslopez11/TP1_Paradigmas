@@ -6,6 +6,6 @@ class HachaDoble : public ArmaCombate {
 
 	public:
 		HachaDoble(int d, bool puedeB, int nivelR, string rar,bool conF);
-		bool estaPrendidaFuego();
+		bool tieneHabilidadEspecial() const override;
 
 };

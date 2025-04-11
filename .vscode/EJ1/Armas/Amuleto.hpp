@@ -6,6 +6,6 @@ class Amuleto : public ArmaMagica {
 
 	public:
 		Amuleto(string poderM, bool prot, int niverlR,string rangoE,bool malaS);
-		void tieneMalaSuerte();
+		bool tieneHabilidadEspecial() const override;
 
 };

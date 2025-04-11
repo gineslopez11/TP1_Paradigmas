@@ -6,6 +6,6 @@ class Espada : public ArmaCombate {
 
 	public:
 		Espada(int d, bool puedeB, int nivelR, string rar,bool filoD);
-		bool tieneFDoble();
+		bool tieneHabilidadEspecial() const override;
 
 };

@@ -6,6 +6,6 @@ class Baston : public ArmaMagica {
 
 	public:
 		Baston(string poderM, bool prot, int niverlR,string rangoE,bool gol);
-		bool puedeGolpear();
+		bool tieneHabilidadEspecial() const override;
 
 };
