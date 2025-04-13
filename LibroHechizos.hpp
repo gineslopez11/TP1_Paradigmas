@@ -1,11 +1,12 @@
 #include "ArmaMagica.hpp"
+#pragma once
 
 class LibroHechizos : public ArmaMagica {
 	private:
 		bool hechizoSecreto;
 
 	public:
-		LibroHechizos(string poderM, bool prot, int niverlR,string rangoE,bool hechizoS);
+		LibroHechizos(bool prot, int niverlR,int rangoE,bool hechizoS);
 		bool tieneHabilidadEspecial() const override;
 
 };

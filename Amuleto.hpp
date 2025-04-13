@@ -1,11 +1,12 @@
 #include "ArmaMagica.hpp"
+#pragma once
 
 class Amuleto : public ArmaMagica {
 	private:
 		bool malaSuerte;
 
 	public:
-		Amuleto(string poderM, bool prot, int niverlR,string rangoE,bool malaS);
+		Amuleto(bool prot, int niverlR,int rangoE,bool malaS);
 		bool tieneHabilidadEspecial() const override;
 
 };

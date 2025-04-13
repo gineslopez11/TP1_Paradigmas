@@ -41,6 +41,19 @@ int Guerrero::getResistencia(){
 	return resistencia;
 }
 
+void Guerrero::agregarArma(shared_ptr<ArmaCombate> arma){
+	armasGuerrero.push_back(arma);
+}
+
+void Guerrero::mostrarInfo() const {
+	cout << "Guerrero: " << nombre << endl;
+	cout << "Armas mágicas:" << endl;
+	for (const auto& arma : armasGuerrero) {
+		cout << "- " << arma->getNombre() << endl;
+	}
+	cout<<"\n";
+}
+
 //Mago
 
 void Mago::usar(){
@@ -71,6 +84,19 @@ int Mago::getPoderDisponible(){
 	return poderDisponible;
 }
 
+void Mago::agregarArma(shared_ptr<ArmaMagica> arma){
+	armasMago.push_back(arma);
+}
+
+void Mago::mostrarInfo() const {
+	cout << "Mago: " << nombre << endl;
+	cout << "Armas mágicas:" << endl;
+	for (const auto& arma : armasMago) {
+		cout << "- " << arma->getNombre() << endl;
+	}
+	cout<<"\n";
+}
+
 //Clases derivadas de Guerrero
 
 Caballero::Caballero(int niv, int vid, int res, bool guar){
@@ -83,6 +109,18 @@ Caballero::Caballero(int niv, int vid, int res, bool guar){
 
 bool Caballero::HabilidadEspecial() const {
 	return guardia;
+}
+
+Mercenario::Mercenario(int niv, int vid, int res, bool ataqueP){
+	nombre = "Mercenario";
+	nivel = niv;
+	vida = vid;
+	resistencia = res;
+	ataquePersonal = ataqueP;
+}
+
+bool Mercenario::HabilidadEspecial() const {
+	return ataquePersonal;
 }
 
 Barbaro::Barbaro(int niv, int vid, int res, bool fur){

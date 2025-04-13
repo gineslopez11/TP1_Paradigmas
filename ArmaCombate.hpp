@@ -1,4 +1,5 @@
 #include "IArma.hpp"
+#pragma once
 
 class ArmaCombate : public IArma{
 	protected:
@@ -6,7 +7,7 @@ class ArmaCombate : public IArma{
 		string nombre;
 		bool puedeBloquear;
 		int nivelRequerido;
-		string rareza;
+		int rareza;
 
 	public:
 		virtual bool tieneHabilidadEspecial() const = 0;
@@ -14,7 +15,7 @@ class ArmaCombate : public IArma{
 		string getNombre() const override;
 		bool bloqueadora();
 		int getNivelRequerido();
-		string getRareza();
+		int getRareza();
 		int getDaño();
 
 };

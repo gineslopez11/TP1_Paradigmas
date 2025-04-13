@@ -1,4 +1,5 @@
 #include "Guerrero.hpp"
+#pragma once
 
 class Mercenario : public Guerrero {
 	private:

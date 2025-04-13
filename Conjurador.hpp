@@ -1,4 +1,5 @@
 #include "Mago.hpp"
+#pragma once
 
 class Conjurador : public Mago {
 	private:

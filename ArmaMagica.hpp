@@ -1,20 +1,19 @@
 #include "IArma.hpp"
+#pragma once
 
 class ArmaMagica : public IArma{
 	protected:
-		string poderMagico;
 		string nombre;
 		bool proteccion;
 		int nivelRequerido;
-		string rangoEfecto;
+		int rangoEfecto;
 
 	public:
 		virtual bool tieneHabilidadEspecial() const = 0;
-		void usar();
-		string getNombre();
+		void usar() const override;
+		string getNombre() const override;
 		bool proteje();
 		int getNivelRequerido();
-		string getRango();
-		string getPoderMagico();
+		int getRango();
 
 };

@@ -1,4 +1,5 @@
 #include "Guerrero.hpp"
+#pragma once
 
 class Gladiador : public Guerrero {
 	private:

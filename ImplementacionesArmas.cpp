@@ -23,29 +23,27 @@ string ArmaCombate::getNombre()const { return nombre;}
 
 int ArmaCombate::getNivelRequerido () { return nivelRequerido;}
 
-string ArmaCombate::getRareza() { return rareza;}
+int ArmaCombate::getRareza() { return rareza;}
 
 int ArmaCombate::getDaño() { return daño;}
 
 
 //ArmaMagica
-void ArmaMagica::usar() {
-    cout << "Se usa el arma magica: "<< nombre << ", con el poder: "<< poderMagico <<endl;
+void ArmaMagica::usar() const {
+    cout << "Se usa el arma magica: "<< nombre << endl;
 }
 
-string ArmaMagica::getNombre() { return nombre;}
+string ArmaMagica::getNombre() const { return nombre;}
 
 bool ArmaMagica::proteje() { return proteccion;}
 
 int ArmaMagica::getNivelRequerido() { return nivelRequerido;}
 
-string ArmaMagica::getRango() { return rangoEfecto;}
-
-string ArmaMagica::getPoderMagico() { return poderMagico;}
+int ArmaMagica::getRango() { return rangoEfecto;}
 
 
 //Concretas de ArmaCombate
-Espada::Espada(int d, bool puedeB, int nivelR, string rar,bool filoD){
+Espada::Espada(int d, bool puedeB, int nivelR, int rar,bool filoD){
 	nombre = "Espada";
 	daño = d;
 	puedeBloquear = puedeB;
@@ -58,7 +56,7 @@ bool Espada::tieneHabilidadEspecial() const {
 	return filoDoble; 
 }
 
-Garrote::Garrote(int d, bool puedeB, int nivelR, string rar,bool pesoP){
+Garrote::Garrote(int d, bool puedeB, int nivelR, int rar,bool pesoP){
 	nombre = "Garrote";
 	daño = d;
 	puedeBloquear = puedeB;
@@ -71,7 +69,7 @@ bool Garrote::tieneHabilidadEspecial() const{
 	return pesoPesado;
 }
 
-HachaDoble::HachaDoble(int d, bool puedeB, int nivelR, string rar,bool conF){
+HachaDoble::HachaDoble(int d, bool puedeB, int nivelR, int rar,bool conF){
 	nombre = "HachaDoble";
 	daño = d;
 	puedeBloquear = puedeB;
@@ -84,7 +82,7 @@ bool HachaDoble::tieneHabilidadEspecial() const{
 	return conFuego;
 }
 
-HachaSimple::HachaSimple(int d, bool puedeB, int nivelR, string rar,bool lan){
+HachaSimple::HachaSimple(int d, bool puedeB, int nivelR, int rar,bool lan){
 	nombre = "HachaSimple";
 	daño = d;
 	puedeBloquear = puedeB;
@@ -97,7 +95,7 @@ bool HachaSimple::tieneHabilidadEspecial() const{
 	return lanzable;
 }
 
-Lanza::Lanza(int d, bool puedeB, int nivelR, string rar,bool ven){
+Lanza::Lanza(int d, bool puedeB, int nivelR, int rar,bool ven){
 	nombre = "Lanza";
 	daño = d;
 	puedeBloquear = puedeB;
@@ -112,9 +110,8 @@ bool Lanza::tieneHabilidadEspecial() const{
 
 
 //Concretas de ArmaMagica
-Amuleto::Amuleto(string poderM, bool prot, int niverlR,string rangoE,bool malaS){
+Amuleto::Amuleto(bool prot, int niverlR,int rangoE,bool malaS){
 	nombre = "Amuleto";
-	poderMagico = poderM;
 	proteccion = prot;
 	nivelRequerido = niverlR;
 	rangoEfecto = rangoE;
@@ -125,9 +122,8 @@ bool Amuleto::tieneHabilidadEspecial() const{
 	return malaSuerte;
 }
 
-Baston::Baston(string poderM, bool prot, int niverlR,string rangoE,bool gol){
+Baston::Baston(bool prot, int niverlR,int rangoE,bool gol){
 	nombre = "Baston";
-	poderMagico = poderM;
 	proteccion = prot;
 	nivelRequerido = niverlR;
 	rangoEfecto = rangoE;
@@ -138,9 +134,8 @@ bool Baston::tieneHabilidadEspecial() const{
 	return golpea;
 }
 
-LibroHechizos::LibroHechizos(string poderM, bool prot, int niverlR,string rangoE,bool hechizoS){
+LibroHechizos::LibroHechizos(bool prot, int niverlR,int rangoE,bool hechizoS){
 	nombre = "LibroHechizos";
-	poderMagico = poderM;
 	proteccion = prot;
 	nivelRequerido = niverlR;
 	rangoEfecto = rangoE;
@@ -151,9 +146,8 @@ bool LibroHechizos::tieneHabilidadEspecial() const{
 	return hechizoSecreto;
 }
 
-Pocion::Pocion(string poderM, bool prot, int niverlR,string rangoE,bool curacionI){
+Pocion::Pocion(bool prot, int niverlR,int rangoE,bool curacionI){
 	nombre = "Pocion";
-	poderMagico = poderM;
 	proteccion = prot;
 	nivelRequerido = niverlR;
 	rangoEfecto = rangoE;
