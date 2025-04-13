@@ -10,6 +10,7 @@
 using namespace std;
 
 int main (){
+	cout <<"EJERCICIO 2\n"<<endl;
 	vector<pair<string, int>> personajesPorCrear;
 	vector<shared_ptr<IPersonaje>> personajesCreados;
 	vector<string> opcionesMago = {"hechicero", "brujo", "conjurador", "nigromante" };

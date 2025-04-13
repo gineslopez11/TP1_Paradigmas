@@ -30,7 +30,7 @@ int ArmaCombate::getDaño() { return daño;}
 
 //ArmaMagica
 void ArmaMagica::usar() const {
-    cout << "Se usa el arma magica: "<< nombre << "haciendo: "<< daño <<" daño"<<endl;
+    cout << "Se usa el arma magica: "<< nombre << " haciendo: "<< daño <<" daño"<<endl;
 }
 
 string ArmaMagica::getNombre() const { return nombre;}

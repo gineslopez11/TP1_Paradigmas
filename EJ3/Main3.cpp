@@ -6,6 +6,7 @@ using namespace std;
 
 
 int main (){
+	cout <<"EJERCICIO 3\n"<<endl;
 	int a1;
 	string a1String,a2String;
 	srand(time(nullptr)); 
