@@ -1,5 +1,6 @@
 #include "PersonajesYArmas.hpp"
 #include "PersonajeFactory.hpp"
+#include "Combate.hpp"
 
 #include <iostream>
 #include <vector>

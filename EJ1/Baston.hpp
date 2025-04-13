@@ -6,7 +6,7 @@ class Baston : public ArmaMagica {
 		bool golpea;
 
 	public:
-		Baston(bool prot, int niverlR,int rangoE,bool gol);
+		Baston(int d, bool prot, int niverlR,int rangoE,bool gol);
 		bool tieneHabilidadEspecial() const override;
 
 };

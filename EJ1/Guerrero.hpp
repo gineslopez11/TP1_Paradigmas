@@ -1,25 +1,25 @@
 #include "IPersonaje.hpp"
-#include "ArmaMagica.hpp"
+#include "ArmaCombate.hpp"
+#include <memory>
 #pragma once
 
-class Mago : public IPersonaje {
+class Guerrero : public IPersonaje {
 	protected:
 		string nombre;
 		int nivel;
 		int vida;
-		int poderDisponible;
-		vector<shared_ptr<ArmaMagica>> armasMago;
-
+		int resistencia;
+		vector<shared_ptr<ArmaCombate>> armasGuerrero;
 	public:
 		void usar() override;
 		void atacar() override;
 		void defender() override;
 		virtual bool HabilidadEspecial() const = 0;
 		int getNivel() const override;
-		int getVida();
+		int getVida() const override;
+		void setVida(int nuevaV) override;
 		string getNombre() const override;
-		int getPoderDisponible();
-		void agregarArma(shared_ptr<ArmaMagica> arma);
+		int getResistencia();
+		void agregarArma(shared_ptr<ArmaCombate> arma);
 		void mostrarInfo() const override;
-
 };

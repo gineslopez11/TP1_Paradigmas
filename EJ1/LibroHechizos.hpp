@@ -6,7 +6,7 @@ class LibroHechizos : public ArmaMagica {
 		bool hechizoSecreto;
 
 	public:
-		LibroHechizos(bool prot, int niverlR,int rangoE,bool hechizoS);
+		LibroHechizos(int d, bool prot, int niverlR,int rangoE,bool hechizoS);
 		bool tieneHabilidadEspecial() const override;
 
 };

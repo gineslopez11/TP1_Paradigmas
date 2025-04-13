@@ -6,7 +6,7 @@ class Pocion : public ArmaMagica {
 		bool curacionInstantanea;
 
 	public:
-		Pocion(bool prot, int niverlR,int rangoE,bool curacionI);
+		Pocion(int d, bool prot, int niverlR,int rangoE,bool curacionI);
 		bool tieneHabilidadEspecial() const override;
 
 };

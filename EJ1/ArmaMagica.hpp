@@ -3,6 +3,7 @@
 
 class ArmaMagica : public IArma{
 	protected:
+		int daño;
 		string nombre;
 		bool proteccion;
 		int nivelRequerido;
@@ -15,5 +16,5 @@ class ArmaMagica : public IArma{
 		bool proteje();
 		int getNivelRequerido();
 		int getRango();
-
+		int getDaño();
 };

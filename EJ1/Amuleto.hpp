@@ -6,7 +6,7 @@ class Amuleto : public ArmaMagica {
 		bool malaSuerte;
 
 	public:
-		Amuleto(bool prot, int niverlR,int rangoE,bool malaS);
+		Amuleto(int d, bool prot, int niverlR,int rangoE,bool malaS);
 		bool tieneHabilidadEspecial() const override;
 
 };

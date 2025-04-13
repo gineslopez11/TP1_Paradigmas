@@ -30,7 +30,7 @@ int ArmaCombate::getDaño() { return daño;}
 
 //ArmaMagica
 void ArmaMagica::usar() const {
-    cout << "Se usa el arma magica: "<< nombre << endl;
+    cout << "Se usa el arma magica: "<< nombre << "haciendo: "<< daño <<" daño"<<endl;
 }
 
 string ArmaMagica::getNombre() const { return nombre;}
@@ -40,6 +40,8 @@ bool ArmaMagica::proteje() { return proteccion;}
 int ArmaMagica::getNivelRequerido() { return nivelRequerido;}
 
 int ArmaMagica::getRango() { return rangoEfecto;}
+
+int ArmaMagica::getDaño() { return daño;}
 
 
 //Concretas de ArmaCombate
@@ -110,7 +112,8 @@ bool Lanza::tieneHabilidadEspecial() const{
 
 
 //Concretas de ArmaMagica
-Amuleto::Amuleto(bool prot, int niverlR,int rangoE,bool malaS){
+Amuleto::Amuleto(int d, bool prot, int niverlR,int rangoE,bool malaS){
+	daño = d;
 	nombre = "Amuleto";
 	proteccion = prot;
 	nivelRequerido = niverlR;
@@ -122,7 +125,8 @@ bool Amuleto::tieneHabilidadEspecial() const{
 	return malaSuerte;
 }
 
-Baston::Baston(bool prot, int niverlR,int rangoE,bool gol){
+Baston::Baston(int d, bool prot, int niverlR,int rangoE,bool gol){
+	daño = d;
 	nombre = "Baston";
 	proteccion = prot;
 	nivelRequerido = niverlR;
@@ -134,7 +138,8 @@ bool Baston::tieneHabilidadEspecial() const{
 	return golpea;
 }
 
-LibroHechizos::LibroHechizos(bool prot, int niverlR,int rangoE,bool hechizoS){
+LibroHechizos::LibroHechizos(int d, bool prot, int niverlR,int rangoE,bool hechizoS){
+	daño = d;
 	nombre = "LibroHechizos";
 	proteccion = prot;
 	nivelRequerido = niverlR;
@@ -146,7 +151,8 @@ bool LibroHechizos::tieneHabilidadEspecial() const{
 	return hechizoSecreto;
 }
 
-Pocion::Pocion(bool prot, int niverlR,int rangoE,bool curacionI){
+Pocion::Pocion(int d, bool prot, int niverlR,int rangoE,bool curacionI){
+	daño = d;
 	nombre = "Pocion";
 	proteccion = prot;
 	nivelRequerido = niverlR;

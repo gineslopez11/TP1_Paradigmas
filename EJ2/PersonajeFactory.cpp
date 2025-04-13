@@ -20,16 +20,16 @@ shared_ptr<Mago> PersonajeFactory::crearMago(string tipoMago){
 
 shared_ptr<ArmaMagica> PersonajeFactory::crearArmaMagica(string armaM){
 	if (armaM == "amuleto"){
-		return make_shared<Amuleto>(rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Amuleto>(30,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaM == "baston"){
-		return make_shared<Baston>(rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Baston>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaM == "librohechizos"){
-		return make_shared<LibroHechizos>(rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<LibroHechizos>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaM == "pocion"){
-		return make_shared<Pocion>(rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Pocion>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else{ throw invalid_argument("Tipo de arma magica inválida: " + armaM); }
 }
@@ -55,19 +55,19 @@ shared_ptr<Guerrero> PersonajeFactory::crearGuerrero(string tipoGuerrero){
 
 shared_ptr<ArmaCombate> PersonajeFactory::crearArmaCombate(string armaC){
 	if (armaC == "espada"){
-		return make_shared<Espada>(rand() % 100 + 1,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Espada>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaC == "garrote"){
-		return make_shared<Garrote>(rand() % 100 + 1,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Garrote>(30,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaC == "hachadoble"){
-		return make_shared<HachaDoble>(rand() % 100 + 1,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<HachaDoble>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaC == "hachasimple"){
-		return make_shared<HachaSimple>(rand() % 100 + 1,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<HachaSimple>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else if (armaC == "lanza"){
-		return make_shared<Lanza>(rand() % 100 + 1,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Lanza>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
 	else{ throw invalid_argument("Tipo de arma de combate inválida: " + armaC); }
 }

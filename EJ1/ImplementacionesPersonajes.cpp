@@ -29,8 +29,12 @@ int Guerrero::getNivel() const {
 	return nivel;
 }
 
-int Guerrero::getVida(){
+int Guerrero::getVida()const{
 	return vida;
+}
+
+void Guerrero::setVida(int nuevaV){
+	vida = nuevaV;
 }
 
 string Guerrero::getNombre() const {
@@ -47,10 +51,13 @@ void Guerrero::agregarArma(shared_ptr<ArmaCombate> arma){
 
 void Guerrero::mostrarInfo() const {
 	cout << "Guerrero: " << nombre << endl;
-	cout << "Armas mágicas:" << endl;
-	for (const auto& arma : armasGuerrero) {
-		cout << "- " << arma->getNombre() << endl;
+	cout << "Armas de Combate:" << endl;
+	if (armasGuerrero.size() > 0 ){
+		for (const auto& arma : armasGuerrero) {
+			cout << "- " << arma->getNombre() << endl;
+		}
 	}
+	else { cout<<"No tiene armas"<<endl;}
 	cout<<"\n";
 }
 
@@ -72,8 +79,12 @@ int Mago::getNivel() const {
 	return nivel;
 }
 
-int Mago::getVida(){
+int Mago::getVida() const{
 	return vida;
+}
+
+void Mago::setVida(int nuevaV){
+	vida = nuevaV;
 }
 
 string Mago::getNombre() const {
@@ -91,9 +102,13 @@ void Mago::agregarArma(shared_ptr<ArmaMagica> arma){
 void Mago::mostrarInfo() const {
 	cout << "Mago: " << nombre << endl;
 	cout << "Armas mágicas:" << endl;
-	for (const auto& arma : armasMago) {
-		cout << "- " << arma->getNombre() << endl;
+
+	if (armasMago.size() > 0 ){
+		for (const auto& arma : armasMago) {
+			cout << "- " << arma->getNombre() << endl;
+		}
 	}
+	else { cout<<"No tiene armas"<<endl;}
 	cout<<"\n";
 }
 
