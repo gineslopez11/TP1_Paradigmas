@@ -2,72 +2,64 @@
 #include <stdexcept>
 #include <string>
 
-shared_ptr<Mago> PersonajeFactory::crearMago(string tipoMago){
-	if (tipoMago == "hechicero"){
+shared_ptr<IPersonaje> PersonajeFactory::crearPersonaje(string tipoPersonaje){
+	if (tipoPersonaje == "hechicero"){
 		return make_shared<Hechicero>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoMago == "brujo"){
+	else if (tipoPersonaje == "brujo"){
 		return make_shared<Brujo>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoMago == "nigromante"){
+	else if (tipoPersonaje == "nigromante"){
 		return make_shared<Nigromante>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoMago == "conjurador"){
+	else if (tipoPersonaje == "conjurador"){
 		return make_shared<Conjurador>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else{ throw invalid_argument("Tipo de mago inválido: " + tipoMago); }
-}
-
-shared_ptr<ArmaMagica> PersonajeFactory::crearArmaMagica(string armaM){
-	if (armaM == "amuleto"){
-		return make_shared<Amuleto>(30,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
-	}
-	else if (armaM == "baston"){
-		return make_shared<Baston>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
-	}
-	else if (armaM == "librohechizos"){
-		return make_shared<LibroHechizos>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
-	}
-	else if (armaM == "pocion"){
-		return make_shared<Pocion>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
-	}
-	else{ throw invalid_argument("Tipo de arma magica inválida: " + armaM); }
-}
-
-shared_ptr<Guerrero> PersonajeFactory::crearGuerrero(string tipoGuerrero){
-	if (tipoGuerrero == "barbaro"){
+	else if (tipoPersonaje == "barbaro"){
 		return make_shared<Barbaro>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoGuerrero == "caballero"){
+	else if (tipoPersonaje == "caballero"){
 		return make_shared<Caballero>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoGuerrero == "gladiador"){
+	else if (tipoPersonaje == "gladiador"){
 		return make_shared<Gladiador>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoGuerrero == "mercenario"){
+	else if (tipoPersonaje == "mercenario"){
 		return make_shared<Mercenario>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (tipoGuerrero == "paladin"){
+	else if (tipoPersonaje == "paladin"){
 		return make_shared<Paladin>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else{ throw invalid_argument("Tipo de guerrero inválido: " + tipoGuerrero); }
+	else{ throw invalid_argument("Tipo de mago inválido: " + tipoPersonaje); }
 }
 
-shared_ptr<ArmaCombate> PersonajeFactory::crearArmaCombate(string armaC){
-	if (armaC == "espada"){
+shared_ptr<IArma> PersonajeFactory::crearArma(string arma){
+	if (arma == "amuleto"){
+		return make_shared<Amuleto>(30,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+	}
+	else if (arma == "baston"){
+		return make_shared<Baston>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+	}
+	else if (arma == "librohechizos"){
+		return make_shared<LibroHechizos>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+	}
+	else if (arma == "pocion"){
+		return make_shared<Pocion>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
+	}
+	else if (arma == "espada"){
 		return make_shared<Espada>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (armaC == "garrote"){
+	else if (arma == "garrote"){
 		return make_shared<Garrote>(30,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (armaC == "hachadoble"){
+	else if (arma == "hachadoble"){
 		return make_shared<HachaDoble>(20,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (armaC == "hachasimple"){
+	else if (arma == "hachasimple"){
 		return make_shared<HachaSimple>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else if (armaC == "lanza"){
+	else if (arma == "lanza"){
 		return make_shared<Lanza>(10,rand() % 2 == 0,100,rand() % 100 + 1,rand() % 2 == 0);
 	}
-	else{ throw invalid_argument("Tipo de arma de combate inválida: " + armaC); }
+	else{ throw invalid_argument("Tipo de arma magica inválida: " + arma); }
 }

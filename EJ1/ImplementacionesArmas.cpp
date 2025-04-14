@@ -25,7 +25,7 @@ int ArmaCombate::getNivelRequerido () { return nivelRequerido;}
 
 int ArmaCombate::getRareza() { return rareza;}
 
-int ArmaCombate::getDaño() { return daño;}
+int ArmaCombate::getDaño() const { return daño;}
 
 
 //ArmaMagica
@@ -41,7 +41,7 @@ int ArmaMagica::getNivelRequerido() { return nivelRequerido;}
 
 int ArmaMagica::getRango() { return rangoEfecto;}
 
-int ArmaMagica::getDaño() { return daño;}
+int ArmaMagica::getDaño() const { return daño;}
 
 
 //Concretas de ArmaCombate

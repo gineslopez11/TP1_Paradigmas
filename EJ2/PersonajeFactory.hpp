@@ -8,8 +8,6 @@ using namespace std;
 
 class PersonajeFactory {
 	public:
-		static shared_ptr<Mago>crearMago(string tipoMago);
-		static shared_ptr<ArmaMagica>crearArmaMagica(string armaM);
-		static shared_ptr<Guerrero>crearGuerrero(string tipoGuerrero);
-		static shared_ptr<ArmaCombate>crearArmaCombate(string armaC);
+		static shared_ptr<IPersonaje>crearPersonaje(string tipoPersonaje);
+		static shared_ptr<IArma>crearArma(string arma);
 };

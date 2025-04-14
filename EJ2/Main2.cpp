@@ -13,10 +13,9 @@ int main (){
 	cout <<"EJERCICIO 2\n"<<endl;
 	vector<pair<string, int>> personajesPorCrear;
 	vector<shared_ptr<IPersonaje>> personajesCreados;
-	vector<string> opcionesMago = {"hechicero", "brujo", "conjurador", "nigromante" };
-	vector<string> opcionesGuerrero = {"barbaro", "caballero", "gladiador", "mercenario","paladin" };
-	vector<string> opcionesArmaMagica = {"baston", "librohechizos", "amuleto", "pocion" };
-	vector<string> opcionesArmaCombate = {"espada", "garrote", "hachadoble", "hachasimple","lanza"};
+	vector<string> opcionesMago = {"hechicero", "brujo", "conjurador", "nigromante"};
+	vector<string> opcionesGuerrero {"barbaro", "caballero", "gladiador", "mercenario","paladin" };
+	vector<string> opcionesArmas = {"baston", "librohechizos", "amuleto", "pocion","espada", "garrote", "hachadoble", "hachasimple","lanza" };
 
 	srand(time(nullptr)); 
 
@@ -37,13 +36,13 @@ int main (){
 		if (par.first == "Mago"){
 			int indice = rand() % opcionesMago.size();  
         	string elegido = opcionesMago[indice];
-			shared_ptr<Mago> personajeAgregar = PersonajeFactory::crearMago(elegido);
+			shared_ptr<IPersonaje> personajeAgregar = PersonajeFactory::crearPersonaje(elegido);
 
 			if (par.second >= 0){
 				for (int k = 0; k < par.second; k++){
-					int indice = rand() % opcionesArmaMagica.size();  
-					string elegido = opcionesArmaMagica[indice];
-					shared_ptr<ArmaMagica> armaAgregar = PersonajeFactory::crearArmaMagica(elegido);
+					int indice = rand() % opcionesArmas.size();  
+					string elegido = opcionesArmas[indice];
+					shared_ptr<IArma> armaAgregar = PersonajeFactory::crearArma(elegido);
 					personajeAgregar->agregarArma(armaAgregar);
 				}
 			}
@@ -52,13 +51,13 @@ int main (){
 		else if (par.first == "Guerrero"){
 			int indice = rand() % opcionesGuerrero.size();  
         	string elegido = opcionesGuerrero[indice];
-			shared_ptr<Guerrero> personajeAgregar = PersonajeFactory::crearGuerrero(elegido);
+			shared_ptr<IPersonaje> personajeAgregar = PersonajeFactory::crearPersonaje(elegido);
 			personajesCreados.push_back (personajeAgregar);
 			if (par.second >= 0){
 				for (int l = 0; l < par.second; l++){
-					int indice = rand() % opcionesArmaCombate.size();  
-					string elegido = opcionesArmaCombate[indice];
-					shared_ptr<ArmaCombate> armaAgregar = PersonajeFactory::crearArmaCombate(elegido);
+					int indice = rand() % opcionesArmas.size();  
+					string elegido = opcionesArmas[indice];
+					shared_ptr<IArma> armaAgregar = PersonajeFactory::crearArma(elegido);
 					personajeAgregar->agregarArma(armaAgregar);
 				}
 			}

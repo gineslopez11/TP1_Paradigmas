@@ -11,12 +11,12 @@ int main (){
 	string a1String,a2String;
 	srand(time(nullptr)); 
 
-	shared_ptr<Mago> jugador1 = PersonajeFactory::crearMago("hechicero");
-	shared_ptr<ArmaMagica> arma1 = PersonajeFactory::crearArmaMagica("baston");
+	shared_ptr<IPersonaje> jugador1 = PersonajeFactory::crearPersonaje("hechicero");
+	shared_ptr<IArma> arma1 = PersonajeFactory::crearArma("baston");
 	jugador1->agregarArma(arma1);
 
-	shared_ptr<Guerrero> jugador2 = PersonajeFactory::crearGuerrero("barbaro");
-	shared_ptr<ArmaCombate> arma2 = PersonajeFactory::crearArmaCombate("lanza");
+	shared_ptr<IPersonaje> jugador2 = PersonajeFactory::crearPersonaje("barbaro");
+	shared_ptr<IArma> arma2 = PersonajeFactory::crearArma("lanza");
 	jugador2->agregarArma(arma2);
 
 	jugador1->mostrarInfo();

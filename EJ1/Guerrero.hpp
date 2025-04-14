@@ -9,7 +9,7 @@ class Guerrero : public IPersonaje {
 		int nivel;
 		int vida;
 		int resistencia;
-		vector<shared_ptr<ArmaCombate>> armasGuerrero;
+		vector<shared_ptr<IArma>> armasGuerrero;
 	public:
 		void usar() override;
 		void atacar() override;
@@ -20,6 +20,6 @@ class Guerrero : public IPersonaje {
 		void setVida(int nuevaV) override;
 		string getNombre() const override;
 		int getResistencia();
-		void agregarArma(shared_ptr<ArmaCombate> arma);
+		void agregarArma(shared_ptr<IArma> arma) override;
 		void mostrarInfo() const override;
 };

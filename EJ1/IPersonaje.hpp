@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include "IArma.hpp"
 using namespace std;
 #pragma once
 
@@ -13,4 +14,6 @@ class IPersonaje {
 		virtual string getNombre() const = 0;
 		virtual int getVida() const = 0;
 		virtual void setVida(int nuevaV) = 0;
+		virtual void agregarArma(shared_ptr<IArma> arma) = 0;
+		virtual ~IPersonaje() = default;
 	};

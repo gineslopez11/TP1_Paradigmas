@@ -16,7 +16,7 @@ class ArmaCombate : public IArma{
 		bool bloqueadora();
 		int getNivelRequerido();
 		int getRareza();
-		int getDaño();
+		int getDaño() const override;
 
 };
 

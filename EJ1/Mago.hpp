@@ -8,7 +8,7 @@ class Mago : public IPersonaje {
 		int nivel;
 		int vida;
 		int poderDisponible;
-		vector<shared_ptr<ArmaMagica>> armasMago;
+		vector<shared_ptr<IArma>> armasMago;
 
 	public:
 		void usar() override;
@@ -20,7 +20,7 @@ class Mago : public IPersonaje {
 		void setVida(int nuevaV) override;
 		string getNombre() const override;
 		int getPoderDisponible();
-		void agregarArma(shared_ptr<ArmaMagica> arma);
+		void agregarArma(shared_ptr<IArma> arma) override;
 		void mostrarInfo() const override;
 
 };

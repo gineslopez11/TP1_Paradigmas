@@ -45,7 +45,7 @@ int Guerrero::getResistencia(){
 	return resistencia;
 }
 
-void Guerrero::agregarArma(shared_ptr<ArmaCombate> arma){
+void Guerrero::agregarArma(shared_ptr<IArma> arma){
 	armasGuerrero.push_back(arma);
 }
 
@@ -95,7 +95,7 @@ int Mago::getPoderDisponible(){
 	return poderDisponible;
 }
 
-void Mago::agregarArma(shared_ptr<ArmaMagica> arma){
+void Mago::agregarArma(shared_ptr<IArma> arma){
 	armasMago.push_back(arma);
 }
 

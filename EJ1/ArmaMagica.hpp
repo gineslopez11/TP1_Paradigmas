@@ -16,5 +16,5 @@ class ArmaMagica : public IArma{
 		bool proteje();
 		int getNivelRequerido();
 		int getRango();
-		int getDaño();
+		int getDaño() const override;
 };
