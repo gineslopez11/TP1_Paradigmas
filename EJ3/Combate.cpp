@@ -23,7 +23,19 @@ int Combate::resolverRonda(Ataque a1, Ataque a2){
 }
 
 void Combate::MostrarEstado(){
+		if (jugador1->getVida() <= 0){
+			cout<<"Jugador 1: "<<jugador1->getNombre()<<" murió"<<endl;
+			cout<<"Jugador 2: "<<jugador2->getNombre()<<" tiene "<<jugador2->getVida()<<" de vida"<<endl;
+
+		}
+		else if (jugador2->getVida() <= 0){
+			cout<<"Jugador 1: "<<jugador1->getNombre()<<" tiene "<<jugador1->getVida()<<" de vida"<<endl;
+			cout<<"Jugador 2: "<<jugador2->getNombre()<<" murió"<<endl;
+
+		}
+		else{
 		cout<<"Jugador 1: "<<jugador1->getNombre()<<" tiene "<<jugador1->getVida()<<" de vida"<<endl;
 		cout<<"Jugador 2: "<<jugador2->getNombre()<<" tiene "<<jugador2->getVida()<<" de vida"<<endl;
-	}
+		}
+}
 

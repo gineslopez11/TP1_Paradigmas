@@ -28,6 +28,7 @@ int main (){
 
 	jugador2->agregarArma(arma2);
 
+	cout<<"COMIENZA LA PARTIDA"<<endl;
 	jugador1->mostrarInfo();
 	jugador2->mostrarInfo();
 
