@@ -9,14 +9,23 @@ int main (){
 	cout <<"EJERCICIO 3\n"<<endl;
 	int a1;
 	string a1String,a2String;
+	vector<string> opcionesPersonaje = {"hechicero", "brujo", "conjurador", "nigromante","barbaro", "caballero", "gladiador", "mercenario","paladin"};
+	vector<string> opcionesArmas = {"baston", "librohechizos", "amuleto", "pocion","espada", "garrote", "hachadoble", "hachasimple","lanza" };
 	srand(time(nullptr)); 
 
 	shared_ptr<IPersonaje> jugador1 = PersonajeFactory::crearPersonaje("hechicero");
 	shared_ptr<IArma> arma1 = PersonajeFactory::crearArma("baston");
 	jugador1->agregarArma(arma1);
 
-	shared_ptr<IPersonaje> jugador2 = PersonajeFactory::crearPersonaje("barbaro");
-	shared_ptr<IArma> arma2 = PersonajeFactory::crearArma("lanza");
+
+	int indiceP = rand() % opcionesPersonaje.size();  
+	string personajeElegido = opcionesPersonaje[indiceP];
+	shared_ptr<IPersonaje> jugador2 = PersonajeFactory::crearPersonaje(personajeElegido);
+
+	int indiceA = rand() % opcionesArmas.size();  
+	string armaElegida = opcionesArmas[indiceA];
+	shared_ptr<IArma> arma2 = PersonajeFactory::crearArma(armaElegida);
+
 	jugador2->agregarArma(arma2);
 
 	jugador1->mostrarInfo();

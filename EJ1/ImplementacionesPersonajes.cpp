@@ -51,7 +51,7 @@ void Guerrero::agregarArma(shared_ptr<IArma> arma){
 
 void Guerrero::mostrarInfo() const {
 	cout << "Guerrero: " << nombre << endl;
-	cout << "Armas de Combate:" << endl;
+	cout << "Armas:" << endl;
 	if (armasGuerrero.size() > 0 ){
 		for (const auto& arma : armasGuerrero) {
 			cout << "- " << arma->getNombre() << endl;
@@ -101,7 +101,7 @@ void Mago::agregarArma(shared_ptr<IArma> arma){
 
 void Mago::mostrarInfo() const {
 	cout << "Mago: " << nombre << endl;
-	cout << "Armas mágicas:" << endl;
+	cout << "Armas:" << endl;
 
 	if (armasMago.size() > 0 ){
 		for (const auto& arma : armasMago) {
