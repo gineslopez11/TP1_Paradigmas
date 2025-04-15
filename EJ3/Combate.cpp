@@ -1,4 +1,3 @@
-#pragma once
 #include "Combate.hpp"
 
 Combate::Combate (shared_ptr<IPersonaje> j1,shared_ptr<IPersonaje> j2){
