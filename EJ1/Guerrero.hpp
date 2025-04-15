@@ -9,7 +9,7 @@ class Guerrero : public IPersonaje {
 		int nivel;
 		int vida;
 		int resistencia;
-		vector<shared_ptr<IArma>> armasGuerrero;
+		vector<shared_ptr<IArma>> armasGuerrero; //Usando este vector puedo tener objetos de tipos personaje que contengan objetos de tipo Arma (haciendo una composicion)
 	public:
 		void usar() override;
 		void atacar() override;

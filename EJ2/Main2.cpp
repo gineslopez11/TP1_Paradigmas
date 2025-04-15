@@ -19,11 +19,12 @@ int main (){
 
 	srand(time(nullptr)); 
 
-    int cantMagos = rand() % 5 + 3; 
+    int cantMagos = rand() % 5 + 3; //cantidad random entre 3 y 7
 	int cantGuerreros = rand() % 5 + 3; 
     
+	//uso el vector de pares (magos, cantidad de armas) para luego recorrerlo y crear los personajes que salieron aleatoriamente
 	for (int i = 0; i < cantMagos; i++){
-		int cantArmasM = rand() % 3;
+		int cantArmasM = rand() % 3; // cantidad random entre 0 y 2
 		personajesPorCrear.push_back({"Mago", cantArmasM});
 	} 
 
@@ -38,7 +39,7 @@ int main (){
         	string elegido = opcionesMago[indice];
 			shared_ptr<IPersonaje> personajeAgregar = PersonajeFactory::crearPersonaje(elegido);
 
-			if (par.second >= 0){
+			if (par.second > 0){ // si tiene armas se crea un arma (o cuantas tenga) y se las agrega al personaje
 				for (int k = 0; k < par.second; k++){
 					int indice = rand() % opcionesArmas.size();  
 					string elegido = opcionesArmas[indice];

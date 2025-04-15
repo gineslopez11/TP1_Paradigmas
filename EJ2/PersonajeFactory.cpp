@@ -2,9 +2,10 @@
 #include <stdexcept>
 #include <string>
 
+//Uso polimorfismo para poder crear personajes y armas de cualquier tipo (Es necesario el uso de punteros para hacerlo)
 shared_ptr<IPersonaje> PersonajeFactory::crearPersonaje(string tipoPersonaje){
 	if (tipoPersonaje == "hechicero"){
-		return make_shared<Hechicero>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);
+		return make_shared<Hechicero>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0); //Uso las librerias para generar numeros aleatorios para generar objetos totalmente random, pueden tener o no habilidades especiales, pueden ser de menor o mayor nivel, etc
 	}
 	else if (tipoPersonaje == "brujo"){
 		return make_shared<Brujo>(rand() % 100 + 1,100,rand() % 100 + 1,rand() % 2 == 0);

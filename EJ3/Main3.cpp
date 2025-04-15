@@ -13,11 +13,13 @@ int main (){
 	vector<string> opcionesArmas = {"baston", "librohechizos", "amuleto", "pocion","espada", "garrote", "hachadoble", "hachasimple","lanza" };
 	srand(time(nullptr)); 
 
+	//elijo yo el personaje y el arma pero puede ser con cualquiera
 	shared_ptr<IPersonaje> jugador1 = PersonajeFactory::crearPersonaje("hechicero");
 	shared_ptr<IArma> arma1 = PersonajeFactory::crearArma("baston");
 	jugador1->agregarArma(arma1);
 
 
+	//creo un jugador 2 random (utilizo logica del ej 2)
 	int indiceP = rand() % opcionesPersonaje.size();  
 	string personajeElegido = opcionesPersonaje[indiceP];
 	shared_ptr<IPersonaje> jugador2 = PersonajeFactory::crearPersonaje(personajeElegido);
@@ -34,7 +36,7 @@ int main (){
 
 	Combate batalla (jugador1,jugador2);
 
-	while (jugador1->getVida() >0 && jugador2->getVida() > 0){
+	while (jugador1->getVida() >0 && jugador2->getVida() > 0){ //mientras los dos jugadores esten vivos, pelean
 		cout<<"NUEVA RONDA"<<endl;
 		batalla.MostrarEstado();
 		cout<<"Elegir: Golpe Fuerte (0), Golpe Rapido (1), Defensa y Golpe (2)"<<endl;
@@ -46,7 +48,7 @@ int main (){
 		Ataque ataqueJugador1 = static_cast<Ataque>(a1);
 		Ataque ataqueJugador2 = batalla.elegirAtaqueJugador2();
 
-		a1String = ataqueToString(ataqueJugador1);
+		a1String = ataqueToString(ataqueJugador1); //uso funcion para convertir el ataque elegido a string para que sea entendible para el usuario
 		a2String = ataqueToString(ataqueJugador2);
 
 		int ganadorRonda = batalla.resolverRonda(ataqueJugador1,ataqueJugador2);

@@ -23,21 +23,22 @@
 #include "Pocion.hpp"
 #include "Amuleto.hpp"
 
+//Hago Main solo para comprobar que compila el ej1
 int main() {
 	cout <<"EJERCICIO 1\n"<<endl;
-    // Crear instancias de personajes
+
     Barbaro barbaro(10, 100, 50, true);
     Caballero caballero(12, 120, 60, true);
     Conjurador mago(8, 80, 40, true);
 
-    // Crear instancias de armas
+  
     Espada espada(10, true, 5, 2, true);
 	Amuleto baston(15,true, 3, 10, true);
 
-    // Usar personajes y armas
+  
     barbaro.usar();
-    caballero.usar();
-    mago.usar();
+    caballero.atacar();
+    mago.defender();
 
     espada.usar();
     baston.usar();

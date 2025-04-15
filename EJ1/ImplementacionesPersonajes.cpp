@@ -45,15 +45,15 @@ int Guerrero::getResistencia(){
 	return resistencia;
 }
 
-void Guerrero::agregarArma(shared_ptr<IArma> arma){
-	armasGuerrero.push_back(arma);
+void Guerrero::agregarArma(shared_ptr<IArma> arma){ //Se utilizan smart pointers para agregar las armas a los personajes, ya que de esta manera se pueden agregar armas sin importar del tipo que sean
+	armasGuerrero.push_back(arma); //agrego al vector de shared pointers de armas 
 }
 
-void Guerrero::mostrarInfo() const {
+void Guerrero::mostrarInfo() const { //Muestro informacion del personaje importante para el ejercicio 3
 	cout << "Guerrero: " << nombre << endl;
 	cout << "Armas:" << endl;
 	if (armasGuerrero.size() > 0 ){
-		for (const auto& arma : armasGuerrero) {
+		for (const auto& arma : armasGuerrero) { //recorro vector de armas si es que tiene
 			cout << "- " << arma->getNombre() << endl;
 		}
 	}

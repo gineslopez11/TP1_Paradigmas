@@ -45,7 +45,7 @@ int ArmaMagica::getDaño() const { return daño;}
 
 
 //Concretas de ArmaCombate
-Espada::Espada(int d, bool puedeB, int nivelR, int rar,bool filoD){
+Espada::Espada(int d, bool puedeB, int nivelR, int rar,bool filoD){ //Constructor de cada arma es igual solo que cambia el ultimo parametro ya que es unico para cada clase concreta. Lo mismo para los personajes
 	nombre = "Espada";
 	daño = d;
 	puedeBloquear = puedeB;
@@ -54,7 +54,7 @@ Espada::Espada(int d, bool puedeB, int nivelR, int rar,bool filoD){
 	filoDoble = filoD;
 }
 
-bool Espada::tieneHabilidadEspecial() const {
+bool Espada::tieneHabilidadEspecial() const { //La habilidad especial no se usa en el trabajo pero si es algo que puede usar para extender el ej3
 	return filoDoble; 
 }
 
