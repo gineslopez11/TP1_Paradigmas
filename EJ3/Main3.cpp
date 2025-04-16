@@ -45,7 +45,7 @@ int main (){
 			cout << "Opción inválida. Elegir: Golpe Fuerte (0), Golpe Rapido (1), Defensa y Golpe (2)" << endl;
 			cin >> a1;
 		}
-		Ataque ataqueJugador1 = static_cast<Ataque>(a1);
+		Ataque ataqueJugador1 = static_cast<Ataque>(a1); //hago casteo de int a Ataque para usar el enum
 		Ataque ataqueJugador2 = batalla.elegirAtaqueJugador2();
 
 		a1String = ataqueToString(ataqueJugador1); //uso funcion para convertir el ataque elegido a string para que sea entendible para el usuario

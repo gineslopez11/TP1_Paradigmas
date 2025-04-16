@@ -12,7 +12,7 @@ using namespace std;
 int main (){
 	cout <<"EJERCICIO 2\n"<<endl;
 	vector<pair<string, int>> personajesPorCrear;
-	vector<shared_ptr<IPersonaje>> personajesCreados;
+	vector<shared_ptr<IPersonaje>> personajesCreados; //Con Shared ptrs puedo agregar personajes de los dos tipos que hay en el juego.
 	vector<string> opcionesMago = {"hechicero", "brujo", "conjurador", "nigromante"};
 	vector<string> opcionesGuerrero {"barbaro", "caballero", "gladiador", "mercenario","paladin" };
 	vector<string> opcionesArmas = {"baston", "librohechizos", "amuleto", "pocion","espada", "garrote", "hachadoble", "hachasimple","lanza" };
@@ -35,7 +35,7 @@ int main (){
 
 	for (const auto& par : personajesPorCrear){
 		if (par.first == "Mago"){
-			int indice = rand() % opcionesMago.size();  
+			int indice = rand() % opcionesMago.size(); //sale un indice random (del vector de strings de tipos de mago) para elegir el Mago que se va a crear 
         	string elegido = opcionesMago[indice];
 			shared_ptr<IPersonaje> personajeAgregar = PersonajeFactory::crearPersonaje(elegido);
 
